@@ -1,5 +1,5 @@
 # Continual Learning with CIFAR10 and in house AnimalParts Dataset
-### Editted and prepared by Matthias Koh Yong An
+### Editted and prepared by Matthias Koh
 
 This is a PyTorch implementation of the continual learning experiments that closely follows https://github.com/GMvandeVen/continual-learning 
 and takes reference to experients described in the following papers:
