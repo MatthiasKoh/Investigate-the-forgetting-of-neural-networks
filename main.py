@@ -221,9 +221,6 @@ def run(args, verbose=False):
         name=args.experiment, scenario=scenario, tasks=args.tasks, data_dir=args.d_dir,
         verbose=verbose, exception=True if args.seed==0 else False,)
       original_datasets= None
-      
-    result_list =[] # NEEED REUPDATE!!!!!!!!!!!!!!!
-
 
     #-------------------------------------------------------------------------------------------------#
 
@@ -471,7 +468,8 @@ def run(args, verbose=False):
     #----------------------#
     #----- EVALUATION -----#
     #----------------------#
-
+    result_list =[] # This is to return the testing results list do reupdate to display the results you would like to see
+    
     if verbose:
         print("\n\nEVALUATION RESULTS:")
 
@@ -688,6 +686,7 @@ if __name__ == '__main__':
       accuracy_data.append(result_list)
       print(accuracy_data)
     
+    #PRINTED DISPLAY OF TESTING RESULTS, edit to your purposes
     #From accuracy_data after n number of runs get 1st task accuracy and avg accuracy
     #calculate average first task accuracy and avg accuracy
     first_task =[]
