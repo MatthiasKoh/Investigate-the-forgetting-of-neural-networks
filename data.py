@@ -23,7 +23,7 @@ def _permutate_image_pixels(image, permutation):
         image = image.view(c, h, w)
         return image
 
-#ablted flag to allow reading in of original images to all be used as test so no spliting into train and test needed
+#Abalted flag to allow reading in of original images to all be used as test so no spliting into train and test needed
 def get_dataset(name, type='train',ablated=False, download=True, capacity=None, permutation=None, dir='./datasets',
                 verbose=False, target_transform=None):
     '''Create [train|valid|test]-dataset.'''
@@ -321,7 +321,7 @@ def get_multitask_experiment(name, scenario, tasks, data_dir="./datasets", only_
         # configurations
         config = DATASET_CONFIGS['animalpart']
         classes_per_task = int(np.floor(8 / tasks))
-        ##################### REMOVE #################
+        ##################### Prints The number of Classes Per Task #################
         print("Class per task", classes_per_task)
         if not only_config:
             # prepare permutation to shuffle label-ids (to create different class batches for each random seed)
@@ -339,7 +339,7 @@ def get_multitask_experiment(name, scenario, tasks, data_dir="./datasets", only_
             labels_per_task = [
                 list(np.array(range(classes_per_task)) + classes_per_task * task_id) for task_id in range(tasks)
             ]
-            ##################### REMOVE #################
+            ##################### Prints the Class Learning order #################
             print("GENERATED LABELS", labels_per_task)
             
             # split them up into sub-tasks
@@ -362,7 +362,7 @@ def get_multitask_experiment(name, scenario, tasks, data_dir="./datasets", only_
         # configurations
         config = DATASET_CONFIGS['animalpart']
         classes_per_task = int(np.floor(8 / tasks))
-        ##################### REMOVE #################
+        ##################### Prints The number of Classes Per Task #################
         print("Class per task", classes_per_task)
         if not only_config:
             # prepare permutation to shuffle label-ids (to create different class batches for each random seed)
@@ -397,7 +397,7 @@ def get_multitask_experiment(name, scenario, tasks, data_dir="./datasets", only_
             labels_per_task = [
                 list(np.array(range(classes_per_task)) + classes_per_task * task_id) for task_id in range(tasks)
             ]
-            ##################### REMOVE #################
+            ##################### Prints the Class Learning order #################
             print("GENERATED LABELS", labels_per_task)
             
             # split them up into sub-tasks
@@ -413,14 +413,14 @@ def get_multitask_experiment(name, scenario, tasks, data_dir="./datasets", only_
                 ablatedtrain_datasets.append(SubDataset(ablated_train, labels, target_transform=target_transform))
                 ablatedtest_datasets.append(SubDataset(ablated_test, labels, target_transform=target_transform))
                     
-    elif name == 'ALLANIMALPART': ############### RECHECK NOT TOO SURE#########!!!!!
+    elif name == 'ALLANIMALPART': ############### !!NEED TO REUPDATE WHEN DATASET IS FINALIED AND BALANCED #########
         # check for number of tasks
         if tasks>3:
             raise ValueError("Experiment 'ANIMALPART' cannot have more than 3 tasks!")
         # configurations
         config = DATASET_CONFIGS['allanimalpart']
         classes_per_task = int(np.floor(8 / tasks))
-        ##################### REMOVE #################
+        ##################### Prints The number of Classes Per Task #################
         print("Class per task", classes_per_task)
         if not only_config:
             # prepare permutation to shuffle label-ids (to create different class batches for each random seed)
