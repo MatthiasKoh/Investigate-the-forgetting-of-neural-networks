@@ -9,9 +9,13 @@ for continual learning ([link](https://arxiv.org/abs/1809.10635))
 
 ## NOTE WHEN USING THE CODE:
 * Do run the two lines below as this is how GMvandeVen has implemented it else the code will not run properly, the visdom server may not work on google collab so after it installs the neccessary packages you may to stop the chunk from running
+
 ###################
+
 !pip install visdom
+
 !python3 -m visdom.server
+
 ###################
 
 ## Running the experiments
