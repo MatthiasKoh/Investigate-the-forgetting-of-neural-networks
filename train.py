@@ -284,7 +284,8 @@ def train_cl(model, train_datasets,test_datasets, result_list, original_datasets
         if generator is not None:
             progress_gen.close()
             
-            #-----> WE WANT TO TEST AFTER EACH TASK training ###################
+        #-----> WE WANT TO TEST AFTER EACH TASK training ###################
+        #### THIS IS FOR MODELS WITHOUT EXEMPLARS ####
         print("\n\n TASK EVALUATION RESULTS:")
         print("\n\n Combination of testsets EVALUATION RESULTS:")
             # to get cumulative task accuracy 
@@ -296,12 +297,12 @@ def train_cl(model, train_datasets,test_datasets, result_list, original_datasets
               result_list.append([precs_task])
             else:
               result_list[task-1].append(precs_task)
-              
+          
+          #Testing on original pictures without mask for ANIMALPARTS dataset
           if original_datasets != none:
             print("\n\n Original picture testsets EVALUATION RESULTS:")
             oprecs_task = evaluate.validate(model, original_datasets[i], verbose=False, test_size=None, with_exemplars=False)
             print(" - Original Task {} testset{}: {:.4f}".format(task, i , oprecs_task))
-        
         
         
         # EWC: estimate Fisher Information matrix (FIM) and update term for quadratic penalty
@@ -335,8 +336,8 @@ def train_cl(model, train_datasets,test_datasets, result_list, original_datasets
                 model.construct_exemplar_set(dataset=class_dataset, n=exemplars_per_class)
             model.compute_means = True
             
-             #-----> EXEMPLARS WE WANT TO TEST AFTER EACH TASK training ###################
-         # -with exemplars
+         #-----> EXEMPLARS WE WANT TO TEST AFTER EACH TASK training ###################
+         # FOR MODELS WITH EXEMPLARS
         if use_exemplars:
           print("\n\n Exemplars Combination of testsets EVALUATION RESULTS:")
           for i in range(task):
@@ -348,6 +349,7 @@ def train_cl(model, train_datasets,test_datasets, result_list, original_datasets
             else:
               result_list[task-1].append(precs_e_task)
               
+          #Testing on original pictures without mask for ANIMALPARTS dataset    
           if original_datasets != none:
             print("\n\n Exemplars Original picture testsets EVALUATION RESULTS:")
             oprecs_e_task = evaluate.validate(model, original_datasets[i], verbose=False, test_size=None, with_exemplars=True)
