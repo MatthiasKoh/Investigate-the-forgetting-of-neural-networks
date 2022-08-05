@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#IMPORT ALL REQUIRED PACKAGES AND LIBRARIES
 import argparse
 import os
 import numpy as np
