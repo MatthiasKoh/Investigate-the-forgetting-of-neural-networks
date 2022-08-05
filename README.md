@@ -7,6 +7,8 @@ and takes reference to experients described in the following papers:
 * Generative replay with feedback connections as a general strategy 
 for continual learning ([link](https://arxiv.org/abs/1809.10635))
 
+In my implementation, we focus on the differences in results of 3 Class Incremental learning types; Naive Fine-Tuning, Elastic Weight Consideration(EWC) and Incremental Classifier and Representative Learning and investigate the forgetfullness of neural networks.
+
 ## NOTE WHEN USING THE CODE:
 * Do run the two lines below as this is how GMvandeVen has implemented it else the code will not run properly, the visdom server may not work on google collab so after it installs the neccessary packages you may to stop the chunk from running
 
