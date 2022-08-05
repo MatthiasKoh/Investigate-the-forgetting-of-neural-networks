@@ -42,6 +42,7 @@ The ANINALPARTS dataset has been split into a few parts and hence the different 
 4. `ABLATEDTAIL` - to perform class incremental learning on the animal pictures with applied mask that occludes the TAIL of the animals, replacing them with a white pixel background, it is then also tested on the original animal pictures without mask apart from the testset from `ABLATEDTAIL` dataset
 5. `ALLANIMALPART` - to perform incremental learning on all the ablated datasets;`ABLATEDHEAD`, `ABLATEDTORSO` and `ABLATEDTAIL`
 * Do note that the datasets need to be downloaded locally, implementation may need to be adjusted for each testing purpose
+The main 4 files to edit is `main.py`, `data.py`, `train.py` and `evalute.py`.
 
 ## Running comparisons from the papers
 #### "Three CL scenarios"-paper
